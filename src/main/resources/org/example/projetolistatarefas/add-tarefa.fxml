@@ -8,17 +8,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="641.0" prefWidth="426.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projetolistatarefas.controller.AddTarefaController">
    <children>
-      <TextField layoutX="112.0" layoutY="71.0" prefHeight="13.0" prefWidth="184.0" />
+      <TextField fx:id="tituloTxt" layoutX="112.0" layoutY="71.0" prefHeight="13.0" prefWidth="184.0" />
       <Text layoutX="112.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Título" />
       <Text layoutX="112.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição" />
-      <TextArea layoutX="112.0" layoutY="153.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="descTxt" layoutX="112.0" layoutY="153.0" prefHeight="200.0" prefWidth="200.0" />
       <Text layoutX="112.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de entrega" />
       <Text layoutX="112.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" />
-      <ComboBox layoutX="112.0" layoutY="486.0" prefWidth="150.0" />
-      <Button layoutX="120.0" layoutY="555.0" mnemonicParsing="false" text="Salvar" />
-      <DatePicker layoutX="110.0" layoutY="413.0" />
+      <ComboBox fx:id="statusCbox" layoutX="112.0" layoutY="486.0" prefWidth="150.0" />
+      <Button fx:id="salvarButton" layoutX="120.0" layoutY="555.0" mnemonicParsing="false" text="Salvar" />
+      <DatePicker fx:id="dataPick" layoutX="110.0" layoutY="413.0" />
+      <Button fx:id="voltarButton" layoutX="197.0" layoutY="555.0" mnemonicParsing="false" text="Voltar" />
    </children>
 </AnchorPane>
