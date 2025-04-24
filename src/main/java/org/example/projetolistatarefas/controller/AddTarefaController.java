@@ -23,6 +23,7 @@ public class AddTarefaController {
     @FXML private Button voltarButton;
 
     private TarefaDao tarefaDao;
+    private Tarefa tarefaEditando = null;
 
     @FXML
     public void initialize(){
@@ -33,7 +34,7 @@ public class AddTarefaController {
         salvarButton.setOnAction(actionEvent -> {
             try {
                 salvarTarefa();
-            } catch (SQLException e) {
+            } catch (SQLException | IOException e) {
                 throw new RuntimeException(e);
             }
         });
@@ -47,7 +48,7 @@ public class AddTarefaController {
         });
     }
 
-    private void salvarTarefa() throws SQLException {
+    private void salvarTarefa() throws SQLException, IOException {
         String titulo = tituloTxt.getText();
         String descricao = descTxt.getText();
         LocalDate localDate = dataPick.getValue();
@@ -61,17 +62,50 @@ public class AddTarefaController {
         if(titulo.isEmpty() || descricao.isEmpty() || dataEntrega == null || status.isEmpty()){
             campoVazio();
         } else {
-            Tarefa tarefa = new Tarefa(titulo, descricao, dataEntrega, status);
-            tarefaDao.adicionarTarefa(tarefa);
+            if(tarefaEditando == null) {
+                // Modo adicionar nova tarefa
+                Tarefa tarefa = new Tarefa(titulo, descricao, dataEntrega, status);
+                tarefaDao.adicionarTarefa(tarefa);
 
-            tituloTxt.clear();
-            descTxt.clear();
-            dataPick.setValue(null);
-            statusCbox.setValue(null);
+                tituloTxt.clear();
+                descTxt.clear();
+                dataPick.setValue(null);
+                statusCbox.setValue(null);
 
-            tarefaAdicionada();
+                tarefaAdicionada();
+            } else {
+                // Modo editar
+                tarefaEditando.setTitulo(titulo);
+                tarefaEditando.setDescricao(descricao);
+                tarefaEditando.setDataEntrega(dataEntrega);
+                tarefaEditando.setStatus(status);
+
+                tarefaDao.atualizarTarefa(tarefaEditando);
+                tarefaAtualizada();
+                voltarLista();
+            }
         }
+    }
 
+    public void setTarefaParaEditar(Tarefa tarefa) {
+        this.tarefaEditando = tarefa;
+
+        tituloTxt.setText(tarefa.getTitulo());
+        descTxt.setText(tarefa.getDescricao());
+        dataPick.setValue(tarefa.getDataEntrega().toLocalDate());
+        statusCbox.setValue(tarefa.getStatus());
+    }
+
+    private void voltarLista() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/projetolistatarefas/lista-tarefas.fxml"));
+        Parent root= loader.load();
+
+        Stage stage= new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+
+        Stage atualStage = (Stage) voltarButton.getScene().getWindow();
+        atualStage.close();
     }
 
     private void campoVazio(){
@@ -90,16 +124,11 @@ public class AddTarefaController {
         alert.showAndWait();
     }
 
-    private void voltarLista() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/projetolistatarefas/lista-tarefas.fxml"));
-        Parent root= loader.load();
-
-        Stage stage= new Stage();
-        stage.setScene(new Scene(root));
-        stage.show();
-
-        Stage atualStage = (Stage) voltarButton.getScene().getWindow();
-        atualStage.close();
+    private void tarefaAtualizada() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Tarefa Atualizada");
+        alert.setHeaderText(null);
+        alert.setContentText("Tarefa atualizada com sucesso!");
+        alert.showAndWait();
     }
-
 }

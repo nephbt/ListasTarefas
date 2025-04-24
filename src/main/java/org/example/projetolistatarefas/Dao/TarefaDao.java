@@ -70,13 +70,13 @@ public class TarefaDao {
     }
 
     // Remover Tarefa
-    public void removerTarefa(int id) throws SQLException {
+    public void removerTarefa(Long id) throws SQLException {
         String sql = "DELETE FROM tarefas WHERE id = ?";
 
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setInt(1, id);
+            stmt.setLong(1, id);
             stmt.executeUpdate();
         }
     }

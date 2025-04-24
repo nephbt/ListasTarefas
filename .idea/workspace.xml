@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f27de302-b9ab-4e62-be0d-2189d703dc9e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/projetolistatarefas/SCRIPT BANCO DE DADOS" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/projetolistatarefas/Dao/TarefaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/projetolistatarefas/Dao/TarefaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/projetolistatarefas/Model/Tarefa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/projetolistatarefas/Model/Tarefa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/projetolistatarefas/controller/AddTarefaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/projetolistatarefas/controller/AddTarefaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/projetolistatarefas/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/projetolistatarefas/controller/CardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/projetolistatarefas/controller/ListaTarefasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/projetolistatarefas/controller/ListaTarefasController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/projetolistatarefas/add-tarefa.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/projetolistatarefas/add-tarefa.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/projetolistatarefas/card-tarefas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/projetolistatarefas/card-tarefas.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/projetolistatarefas/lista-tarefas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/projetolistatarefas/lista-tarefas.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Códigos/Codigos java/Design de Software/ProjetoListaTarefas",
+    "last_opened_file_path": "C:/Users/btele/Downloads/GerenciamentoParque",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15625",
     "project.structure.side.proportion": "0.0",

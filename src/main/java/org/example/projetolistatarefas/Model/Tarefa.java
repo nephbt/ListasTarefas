@@ -24,6 +24,9 @@ public class Tarefa {
         this.status = status;
     }
 
+    public Tarefa() {
+    }
+
     public Long getId() {
         return id;
     }
