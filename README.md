@@ -21,5 +21,5 @@ Aplicação desktop desenvolvida com **JavaFX**, que permite adicionar, visualiz
 - ✏️ Editar tarefas existentes
 - ❌ Excluir tarefas
 - 📅 Exibição da data atual
-- ⏰Hora atualizada em tempo real com thread
+- ⏰ Hora atualizada em tempo real com thread
 - 🗃️ Interface com SceneBuilder
